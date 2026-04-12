@@ -17,7 +17,7 @@ def bridge_url() -> str:
 
 
 def total_wait_ms() -> int:
-    return int(os.environ.get("CODEX_BRIDGE_TOTAL_WAIT_MS", "110000"))
+    return int(os.environ.get("CODEX_BRIDGE_TOTAL_WAIT_MS", "600000"))
 
 
 def poll_slice_ms() -> int:
