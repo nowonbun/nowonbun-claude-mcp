@@ -255,7 +255,7 @@ class ClaudeBridgeApp:
     async def handle_poll_reply(self, request: web.Request) -> web.Response:
         await self.state.prune_expired()
         message_id = request.match_info["message_id"]
-        timeout_ms = int(request.query.get("timeout", "120000"))
+        timeout_ms = int(request.query.get("timeout", "300000"))
         result = await self.state.wait_for_reply(message_id, timeout_ms)
         if result is None:
             return web.json_response({"timeout": True, "reply": None})
